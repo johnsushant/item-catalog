@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-xs-12">
+    <h3>{{item.name}}</h3>
+</div>
+<div class="col-xs-6">
+    <h6><strong>Written By : {{item.username}}</strong></h6>
+</div>
+<div class="col-xs-6">
+    <h6 class="text-right"><strong>Time : {{item.created}}</strong></h6>
+</div>
+<div class="col-xs-12 hori">
+    <hr>
+</div>
+<div class="col-xs-12">
+    <p>{{item.description}}</p>
+</div>
+<div class="col-xs-12">
+    </br>
+</div>
+{% if username == item.username %}
+<div class="col-xs-12">
+    <a href="{{ url_for('EditItem', category_name=category_name, item_name=item.name)}}">Edit</a> | 
+    <a href="{{ url_for('DeleteItem', category_name=category_name, item_name=item.name)}}">Delete</a></p>
+</div>
+{% endif %}
+{% endblock %}

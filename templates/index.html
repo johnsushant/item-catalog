@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="feat">Latest Items</h3>
+    {% for item in top_items %}
+        {% set category_name=getCatName(item.cat_id) %}
+        <p class="h4"><a href="{{ url_for('ItemView', category_name=category_name, item_name=item.name) }}">{{ item.name }}</a> ({{category_name}}) </br>
+    {% endfor %}
+{% endblock %}

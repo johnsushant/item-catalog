@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="feat">{{category_name}} Items ({{items.count()}} items)
+    {% if username %}
+        | <a href="{{ url_for('NewItem', category_name=category_name) }}">New </a>
+    {% endif %}
+</h3>
+    {% for item in items %}
+    <p class="h4"><a href="{{ url_for('ItemView', category_name=category_name, item_name=item.name) }}">{{ item.name }} </a></p>
+    {% endfor %}
+{% endblock %}

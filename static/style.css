@@ -1,0 +1,59 @@
+hr {
+    height: 2px;
+    background-color: #7d97ad;
+}
+
+h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 32px;
+}
+
+.label {
+    padding-top: 20px;
+}
+
+body {
+    background-color: lightslategray;
+}
+
+div {
+    background-color: white;
+}
+
+header {
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+.hed {
+    padding-bottom: 20px;
+}
+
+.cont {
+    padding-top: 0px;
+}
+
+.navigate {
+    border-right: 1px;
+    padding-bottom: 20px;
+}
+
+a {
+    color: orange
+}
+
+.feat {
+    color: black !IMPORTANT;
+}
+
+.error {
+    color: red;
+}
+
+.hori {
+    margin-top: -10px;
+}
+
+.ta {
+    width:600px;
+}

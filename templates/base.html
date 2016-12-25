@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    
+    <title>Anime Catalog</title>
+    
+    <link rel="stylesheet" href="../../../static/bootstrap.min.2.css">
+    <link rel="stylesheet" href="../../../static/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../static/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100" >
+</head>
+
+<body class="container">
+        <header>
+            <div class="row hed">
+                <div class="col-xs-3 col-sm-4 col-md-6">
+                    <a href="/"><img src="../../../static/logo.svg" alt="Logo" width="100" height="100"></a>
+                </div>
+                <div class="col-xs-9 col-sm-8 col-md-6 label">
+                    <h1 class="text-right text-uppercase">Anime Catalog</h1>
+                    <h4 class="text-right">Find the best anime here!</h4>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="row">
+                <div class="col-xs-3 navigate">
+                    <h3 class="feat">Categories</h3>
+                    {% for category in categories %}
+                    <a href="{{ url_for('Items', category_name=category.name)}}">{{ category.name }}</a>
+                    </br>
+                    {% endfor %}
+                    {% if not username %}
+                        <h3 class="feat"><a href=/login>Login</a></h3>
+                    {% else %}
+                        <div class="feat"><h4>Welcome, {{username}}</h4></div>
+                        <a href="{{ url_for('gdisconnect')}}">Logout</a>
+                    {% endif %}
+                </div>
+                <div class="col-xs-9 cont">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </main>
+</body>
+</html>

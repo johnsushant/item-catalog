@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2 class="feat">Add item to {{category_name}}</h2> </br>
+    <form method="POST">
+        <label>
+            Name : 
+            <input type='text' name='name'></input>
+        </label>
+        <br>
+        <label>
+            Description : 
+            <textarea name="description" rows="15" class="ta form-control"></textarea>
+        </label>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <div class = "error">
+        <p>{{error}}</p>
+    </div>
+{% endblock %}
